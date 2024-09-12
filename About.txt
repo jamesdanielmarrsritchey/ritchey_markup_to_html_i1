@@ -1,0 +1,35 @@
+Name: Ritchey Marked Text To HTML
+Implementation: 1
+Version: 19
+Long Identifier: Ritchey Marked Text To HTML i1 v19
+Short Identifier: RMTTHi1v19
+Description: Ritchey Marked Text To HTML is a user-defined PHP function, which takes a plain-text file, which is written using a markup language (made for this tool), and converts it to an HTML file. The markup language used is simple, and meant to be readable as a plain-text document, but provide enough information that it can help create beautified documents when converted.
+History:
+- Project started February 5, 2023.
+- Version 1 completed February 9, 2023.
+- Version 2 completed February 12, 2023.
+- Version 3 completed February 14, 2023.
+- Version 4 completed February 16, 2023.
+- Version 5 completed February 16, 2023.
+- Version 6 completed February 17, 2023.
+- Version 7 completed February 18, 2023.
+- Version 8 completed April 8, 2023.
+- Version 9 completed April 9, 2023.
+- Version 10 completed July 12, 2023.
+- Version 11 completed July 13, 2023.
+- Version 12 completed July 16, 2023.
+- Version 13 completed July 16, 2023.
+- Version 14 completed August 4, 2023.
+- Version 15 completed August 4, 2023.
+- Version 16 completed September 30, 2023.
+- Version 17 completed January 20, 2024.
+- Version 18 completed January 23, 2024.
+- Version 19 completed September 12, 2024.
+Author: James Daniel Marrs Ritchey
+License: This project is hereby licensed under the Ritchey Permissive License v18.
+Notes:
+- This project was named Ritchey Formatted Text To HTML between versions 1-18.
+- Injecting HTML into the plain-text document, to achieve additional formatting in the produced HTML document, isn't supported. It goes against the objective of the markup language used by this tool. However, in some cases it does work. For example, use of <i>italics</i> and <b>bold</b> worked in  version 16.
+- The HTML document produced by this tool is optimized for viewing as a file, not for being served online.
+- This project was built originally for creating resumes, but has been genericized since.
+- The classes "page_heading", and "page_footer" are used to pad page-breaks, for the purpose of working around the text-combining issue common in PDF documents. If you don't need this, use "display: none" in your CSS sheet.
