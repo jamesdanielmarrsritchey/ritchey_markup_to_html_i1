@@ -1,10 +1,23 @@
-Name: Ritchey Marked Text To HTML
-Implementation: 1
-Version: 19
-Long Identifier: Ritchey Marked Text To HTML i1 v19
-Short Identifier: RMTTHi1v19
-Description: Ritchey Marked Text To HTML is a user-defined PHP function, which takes a plain-text file, which is written using a markup language (made for this tool), and converts it to an HTML file. The markup language used is simple, and meant to be readable as a plain-text document, but provide enough information that it can help create beautified documents when converted.
-History:
+# About
+
+NAME: Ritchey Marked Text To HTML
+IMPLEMENTATION: 1
+VERSION: 20
+LONG IDENTIFIER: Ritchey Marked Text To HTML i1 v20
+SHORT IDENTIFIER: RMTTHi1v20
+AUTHOR: James Daniel Marrs Ritchey
+
+## Overview
+
+Ritchey Marked Text To HTML is a user-defined PHP function, which takes a plain-text file, that is written using a markup language (specific to this tool), and converts it to an HTML file. The markup language used is simple, and meant to be readable as a plain-text document, but provide enough information that it can help create beautified documents when converted. The document is meant for use as a document, not a website.
+
+## Licensing
+
+This project is hereby licensed under the Ritchey Permissive License v18.
+
+## History
+
+Releases:
 - Project started February 5, 2023.
 - Version 1 completed February 9, 2023.
 - Version 2 completed February 12, 2023.
@@ -25,11 +38,17 @@ History:
 - Version 17 completed January 20, 2024.
 - Version 18 completed January 23, 2024.
 - Version 19 completed September 12, 2024.
-Author: James Daniel Marrs Ritchey
-License: This project is hereby licensed under the Ritchey Permissive License v18.
-Notes:
+- Version 20 completed September 26, 2024.
+
+Highlighted Changes:
 - This project was named Ritchey Formatted Text To HTML between versions 1-18.
-- Injecting HTML into the plain-text document, to achieve additional formatting in the produced HTML document, isn't supported. It goes against the objective of the markup language used by this tool. However, in some cases it does work. For example, use of <i>italics</i> and <b>bold</b> worked in  version 16.
-- The HTML document produced by this tool is optimized for viewing as a file, not for being served online.
 - This project was built originally for creating resumes, but has been genericized since.
+
+## Notes
+
+Technical:
+- Injecting HTML into the plain-text document, to achieve additional formatting in the produced HTML document, isn't supported. It goes against the objective of the markup language used by this tool. However, in some cases it does work. For example, use of <i>italics</i> and <b>bold</b> worked in  version 16.
 - The classes "page_heading", and "page_footer" are used to pad page-breaks, for the purpose of working around the text-combining issue common in PDF documents. If you don't need this, use "display: none" in your CSS sheet.
+
+Other:
+- The HTML document produced by this tool is optimized for viewing as a regular document, not for being served online as a webpage.
