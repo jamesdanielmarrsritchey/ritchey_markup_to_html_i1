@@ -2,9 +2,9 @@
 
 NAME: Ritchey Marked Text To HTML
 IMPLEMENTATION: 1
-VERSION: 20
-LONG IDENTIFIER: Ritchey Marked Text To HTML i1 v20
-SHORT IDENTIFIER: RMTTHi1v20
+VERSION: 21
+LONG IDENTIFIER: Ritchey Marked Text To HTML i1 v21
+SHORT IDENTIFIER: RMTTHi1v21
 AUTHOR: James Daniel Marrs Ritchey
 
 ## Overview
@@ -39,16 +39,18 @@ Releases:
 - Version 18 completed January 23, 2024.
 - Version 19 completed September 12, 2024.
 - Version 20 completed September 26, 2024.
+- Version 21 completed October 2, 2024.
 
 Highlighted Changes:
 - This project was named Ritchey Formatted Text To HTML between versions 1-18.
-- This project was built originally for creating resumes, but has been genericized since.
+- This project was built originally for creating resumes, but has since been genericized to creating documents in general.
 
 ## Notes
 
 Technical:
 - Injecting HTML into the plain-text document, to achieve additional formatting in the produced HTML document, isn't supported. It goes against the objective of the markup language used by this tool. However, in some cases it does work. For example, use of <i>italics</i> and <b>bold</b> worked in  version 16.
 - The classes "page_heading", and "page_footer" are used to pad page-breaks, for the purpose of working around the text-combining issue common in PDF documents. If you don't need this, use "display: none" in your CSS sheet.
+- Some of the pre-provided themes contain aspects which alter the appearance when printed. These aspects are not compatible with all browsers.
 
 Other:
 - The HTML document produced by this tool is optimized for viewing as a regular document, not for being served online as a webpage.

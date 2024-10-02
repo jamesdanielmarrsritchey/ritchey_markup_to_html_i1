@@ -1,7 +1,7 @@
 <?php
 # Meta
 /*
-Name: Ritchey Marked Text To HTML i1 v20
+Name: Ritchey Marked Text To HTML i1 v21
 Description: Convert text (written using a custom markup language) to HTML. Returns "TRUE" on success. Returns "FALSE" on failure.
 Notes:
 - Optional arguments can be "NULL" to skip them in which case they will use default values.
@@ -10,8 +10,8 @@ Arguments: 'source_file' (required) is the file to read from. 'destination_file'
 Arguments (Script Friendly): source_file:file:required,destination_file:file:required,css_file:file:optional,overwrite:bool:optional,display_errors:bool:optional
 */
 # Content
-if (function_exists('ritchey_marked_text_to_html_i1_v20') === FALSE){
-function ritchey_marked_text_to_html_i1_v20($source_file, $destination_file, $css_file = NULL, $overwrite = NULL, $display_errors = NULL){
+if (function_exists('ritchey_marked_text_to_html_i1_v21') === FALSE){
+function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $css_file = NULL, $overwrite = NULL, $display_errors = NULL){
 	$errors = array();
 	$location = realpath(dirname(__FILE__));
 	if (@is_file($source_file) === FALSE){
@@ -25,7 +25,7 @@ function ritchey_marked_text_to_html_i1_v20($source_file, $destination_file, $cs
 		}
 	}
 	if ($css_file === NULL){
-		$css_file = "{$location}/custom_dependencies/ritchey-document-theme-v1.css";
+		$css_file = "{$location}/custom_dependencies/ritchey-general-theme-v2.css";
 	} else if (@is_file($css_file) === TRUE){
 		// Do nothing
 	} else {
@@ -346,12 +346,12 @@ HEREDOC;
 	if ($display_errors === TRUE){
 		if (@empty($errors) === FALSE){
 			$message = @implode(", ", $errors);
-			if (function_exists('ritchey_marked_text_to_html_i1_v20_format_error') === FALSE){
-				function ritchey_marked_text_to_html_i1_v20_format_error($errno, $errstr){
+			if (function_exists('ritchey_marked_text_to_html_i1_v21_format_error') === FALSE){
+				function ritchey_marked_text_to_html_i1_v21_format_error($errno, $errstr){
 					echo $errstr;
 				}
 			}
-			set_error_handler("ritchey_marked_text_to_html_i1_v20_format_error");
+			set_error_handler("ritchey_marked_text_to_html_i1_v21_format_error");
 			trigger_error($message, E_USER_ERROR);
 		}
 	}
