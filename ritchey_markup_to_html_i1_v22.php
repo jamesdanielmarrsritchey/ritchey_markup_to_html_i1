@@ -1,8 +1,8 @@
 <?php
 # Meta
 /*
-Name: Ritchey Marked Text To HTML i1 v21
-Description: Convert text (written using a custom markup language) to HTML. Returns "TRUE" on success. Returns "FALSE" on failure.
+Name: Ritchey Markup To HTML i1 v22
+Description: Convert text (marked using a custom markup language) to HTML. Returns "TRUE" on success. Returns "FALSE" on failure.
 Notes:
 - Optional arguments can be "NULL" to skip them in which case they will use default values.
 - The HTML document produced does not follow common design practices, because it is intended for viewing as a document, not for serving as a website.
@@ -10,8 +10,8 @@ Arguments: 'source_file' (required) is the file to read from. 'destination_file'
 Arguments (Script Friendly): source_file:file:required,destination_file:file:required,css_file:file:optional,overwrite:bool:optional,display_errors:bool:optional
 */
 # Content
-if (function_exists('ritchey_marked_text_to_html_i1_v21') === FALSE){
-function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $css_file = NULL, $overwrite = NULL, $display_errors = NULL){
+if (function_exists('ritchey_markup_to_html_i1_v22') === FALSE){
+function ritchey_markup_to_html_i1_v22($source_file, $destination_file, $css_file = NULL, $overwrite = NULL, $display_errors = NULL){
 	$errors = array();
 	$location = realpath(dirname(__FILE__));
 	if (@is_file($source_file) === FALSE){
@@ -69,7 +69,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 			$md5 = hash('md5', $value);
 			$line++;
 			#### Process encapsulating elements
-			$html_div_format = array(0 => "<div", 'outter_ids' => "", 1 => ">", 2 => "<div", 'inner_ids' => "", 3 => ">", 'content' => "", 4 => "</div>", 5 => "</div>");
+			$html_div_format = array(0 => "<div", 'outter_ids' => "", 1 => ">", 2 => "<div", 'extra_ids' => "", 3 => ">", 4 => "<div", 'inner_ids' => "", 5 => ">", 'content' => "", 6 => "</div>", 7 => "</div>", 8 => "</div>");
 			// Remove lines that start with '//'
 			if (substr($value, 0, 2) === '//' and $switch1 === FALSE){
 				$value = '';
@@ -83,6 +83,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 					$formatted_value = $html_div_format;
 					$formatted_value['content'] = trim(substr($value, 2));
 					$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_h1' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+					$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_h1' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 					$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_h1' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 					$value = implode($formatted_value);
 				}
@@ -92,6 +93,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 					$formatted_value = $html_div_format;
 					$formatted_value['content'] = trim(substr($value, 3));
 					$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_h2' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+					$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_h2' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 					$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_h2' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 					$value = implode($formatted_value);
 				}
@@ -100,6 +102,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 					$formatted_value = $html_div_format;
 					$formatted_value['content'] = trim(substr($value, 4));
 					$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_h3' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+					$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_h3' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 					$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_h3' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 					$value = implode($formatted_value);
 				}
@@ -108,6 +111,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 					$formatted_value = $html_div_format;
 					$formatted_value['content'] = trim(substr($value, 5));
 					$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_h4' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+					$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_h4' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 					$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_h4' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 					$value = implode($formatted_value);
 				}
@@ -116,6 +120,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 					$formatted_value = $html_div_format;
 					$formatted_value['content'] = trim(substr($value, 6));
 					$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_h5' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+					$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_h5' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 					$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_h5' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 					$value = implode($formatted_value);
 				}
@@ -124,6 +129,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 					$formatted_value = $html_div_format;
 					$formatted_value['content'] = trim(substr($value, 7));
 					$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_h6' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+					$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_h6' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 					$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_h6' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 					$value = implode($formatted_value);
 				}
@@ -132,6 +138,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 				$formatted_value = $html_div_format;
 				$formatted_value['content'] = trim(substr($value, 2));
 				$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_ah' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_ah' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_ah' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 				$value = implode($formatted_value);
 			// Add list labels
@@ -142,6 +149,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 					$formatted_value = $html_div_format;
 					$formatted_value['content'] = ucwords(strtolower(substr($value, 0, -1)));
 					$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_ll1' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+					$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_ll1' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 					$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_ll1' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 					$value = implode($formatted_value);
 				}
@@ -151,6 +159,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 					$formatted_value['content'] = "<span class='list_dot'></span>" . "<span class='list_value'>" . ucwords(strtolower(substr(ltrim($value), 2, -1))) . "</span>";
 					$lln = strpos($value, '-') + 2;
 					$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_ll{$lln}' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+					$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_ll{$lln}' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 					$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_ll{$lln}' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 					$value = implode($formatted_value);
 				}
@@ -160,6 +169,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 				$formatted_value['content'] = "<span class='list_dot'></span>" . "<span class='list_value'>" . substr(ltrim($value), 2) . "</span>";
 				$len = strpos($value, '-') + 2;
 				$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_le{$len}' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_le{$len}' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_le{$len}' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 				$value = implode($formatted_value);
 			// Add Labels
@@ -168,6 +178,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 				$value = explode(':', $value, 2);
 				$formatted_value['content'] = "<span class='field'>" . ucwords(strtolower($value[0])) . "</span>" . substr($value[1], 1);
 				$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_f' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_f' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_f' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 				$value = implode($formatted_value);
 			// Add tags
@@ -181,6 +192,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 				unset($item);
 				$formatted_value['content'] = "<div class='tag_label'></div>" . implode($value);
 				$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_t' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_t' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_t' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 				$value = implode($formatted_value);
 			// Add flat-lists
@@ -194,6 +206,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 				unset($item);
 				$formatted_value['content'] = implode($value);
 				$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_fl' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_fl' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_fl' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 				$value = implode($formatted_value);
 			// Add blockquotes hold
@@ -210,6 +223,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 				$formatted_value = $html_div_format;
 				$formatted_value['content'] = '';
 				$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_blockquote_flag{$flag_number} 02fc208ce1cb8a08bb5b18ed8a2b6141879d0900bd3f269bb417228f79e0c0be_no_processing' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_blockquote_flag{$flag_number} 02fc208ce1cb8a08bb5b18ed8a2b6141879d0900bd3f269bb417228f79e0c0be_no_processing' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_blockquote_flag{$flag_number}' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 				$value = implode($formatted_value);
 			// Add blockquotes 
@@ -217,6 +231,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 				$formatted_value = $html_div_format;
 				$formatted_value['content'] = "<div class='blockquote_wrapper'>" . $value . "</div>";
 				$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_blockquote 02fc208ce1cb8a08bb5b18ed8a2b6141879d0900bd3f269bb417228f79e0c0be_no_processing' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_blockquote 02fc208ce1cb8a08bb5b18ed8a2b6141879d0900bd3f269bb417228f79e0c0be_no_processing' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_blockquote' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 				$value = implode($formatted_value);
 			// Add blockmessage hold
@@ -233,6 +248,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 				$formatted_value = $html_div_format;
 				$formatted_value['content'] = '';
 				$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_blockmessage_flag{$flag_number} 02fc208ce1cb8a08bb5b18ed8a2b6141879d0900bd3f269bb417228f79e0c0be_no_processing' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_blockmessage_flag{$flag_number} 02fc208ce1cb8a08bb5b18ed8a2b6141879d0900bd3f269bb417228f79e0c0be_no_processing' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_blockmessage_flag{$flag_number}' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 				$value = implode($formatted_value);
 			// Add blockmessages
@@ -240,6 +256,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 				$formatted_value = $html_div_format;
 				$formatted_value['content'] = "<div class='blockmessage_wrapper'>" . $value . "</div>";
 				$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_blockmessage 02fc208ce1cb8a08bb5b18ed8a2b6141879d0900bd3f269bb417228f79e0c0be_no_processing' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_blockmessage 02fc208ce1cb8a08bb5b18ed8a2b6141879d0900bd3f269bb417228f79e0c0be_no_processing' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_blockmessage' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 				$value = implode($formatted_value);
 			// Add separator
@@ -247,6 +264,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 				$formatted_value = $html_div_format;
 				$formatted_value['content'] = '';
 				$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_separator' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_separator' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_separator' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 				$value = implode($formatted_value);
 			} else {
@@ -254,6 +272,7 @@ function ritchey_marked_text_to_html_i1_v21($source_file, $destination_file, $cs
 				$formatted_value = $html_div_format;
 				$formatted_value['content'] = $value;
 				$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_default' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_default' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_default' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 				$value = implode($formatted_value);
 			}
@@ -346,12 +365,12 @@ HEREDOC;
 	if ($display_errors === TRUE){
 		if (@empty($errors) === FALSE){
 			$message = @implode(", ", $errors);
-			if (function_exists('ritchey_marked_text_to_html_i1_v21_format_error') === FALSE){
-				function ritchey_marked_text_to_html_i1_v21_format_error($errno, $errstr){
+			if (function_exists('ritchey_markup_to_html_i1_v22_format_error') === FALSE){
+				function ritchey_markup_to_html_i1_v22_format_error($errno, $errstr){
 					echo $errstr;
 				}
 			}
-			set_error_handler("ritchey_marked_text_to_html_i1_v21_format_error");
+			set_error_handler("ritchey_markup_to_html_i1_v22_format_error");
 			trigger_error($message, E_USER_ERROR);
 		}
 	}

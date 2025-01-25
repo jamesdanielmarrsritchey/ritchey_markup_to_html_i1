@@ -805,6 +805,12 @@ a:active {
 		padding: 0px;
 		display: block;
 	}
+	.extra_default[data-marker-md5="69738959040b088631c789a9fefe9e41"] {
+		min-width: 100%;
+		margin: 0px;
+		padding: 0px;
+		display: block;
+	}
 	.inner_default[data-marker-md5="69738959040b088631c789a9fefe9e41"] .image {
 		max-width: 100%;
 		min-width: 100%;
@@ -830,6 +836,12 @@ a:active {
 		display: block;
 	}
 	.inner_default[data-marker-md5="e81b860644ea0efb666e71ee3c333606"] {
+		min-width: 100%;
+		margin: 0px;
+		padding: 0px;
+		display: block;
+	}
+	.extra_default[data-marker-md5="e81b860644ea0efb666e71ee3c333606"] {
 		min-width: 100%;
 		margin: 0px;
 		padding: 0px;
@@ -890,14 +902,3 @@ a:active {
 [data-md5="00000000000000000000000000"]{
 	background-color: red;
 }
-
-
-
-
-
-
-
-
-
-
-

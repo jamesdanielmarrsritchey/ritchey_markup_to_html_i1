@@ -1,148 +1,52 @@
-# Book Title
----
+# Title of the Blog Post
 
-## Cover Landscape
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus bibendum eros non maximus. Sed consequat finibus nisi, at ornare nunc lacinia eget. Etiam aliquam facilisis turpis, eu suscipit lectus imperdiet vel. Donec vestibulum consequat ante, nec molestie augue molestie at. Phasellus in quam lacus. In placerat molestie diam vitae sollicitudin. Donec lectus libero, vulputate vitae massa vitae, luctus lobortis est. Donec ac dui porttitor, rutrum sem sit amet, volutpat nulla. Sed porta maximus ultricies.
 
-(ebook_cover_landscape_marked.jpg)
----
+(image_1.png)
 
-## Cover Portrait
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus bibendum eros non maximus. Sed consequat finibus nisi, at ornare nunc lacinia eget. Etiam aliquam facilisis turpis, eu suscipit lectus imperdiet vel. Donec vestibulum consequat ante, nec molestie augue molestie at. Phasellus in quam lacus. In placerat molestie diam vitae sollicitudin. Donec lectus libero, vulputate vitae massa vitae, luctus lobortis est. Donec ac dui porttitor, rutrum sem sit amet, volutpat nulla. Sed porta maximus ultricies.
 
-(ebook_cover_portrait_marked.jpg)
----
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus bibendum eros non maximus. Sed consequat finibus nisi, at ornare nunc lacinia eget. Etiam aliquam facilisis turpis, eu suscipit lectus imperdiet vel. Donec vestibulum consequat ante, nec molestie augue molestie at. Phasellus in quam lacus. In placerat molestie diam vitae sollicitudin. Donec lectus libero, vulputate vitae massa vitae, luctus lobortis est. Donec ac dui porttitor, rutrum sem sit amet, volutpat nulla. Sed porta maximus ultricies.
 
-## Title
-| Author Name
-| Publisher Name
-| Version 1
-| 1st Edition
-| October 2, 2024
----
+(image_2.png)
 
-## Index
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus bibendum eros non maximus. Sed consequat finibus nisi, at ornare nunc lacinia eget. Etiam aliquam facilisis turpis, eu suscipit lectus imperdiet vel. Donec vestibulum consequat ante, nec molestie augue molestie at. Phasellus in quam lacus. In placerat molestie diam vitae sollicitudin. Donec lectus libero, vulputate vitae massa vitae, luctus lobortis est. Donec ac dui porttitor, rutrum sem sit amet, volutpat nulla. Sed porta maximus ultricies.
 
-- Introduction (p. #)
-- Chapter 1: Chapter Title (pp. #-#)
-- Appendix (pp. #-#)
-- Legal (pp. #-#)
----
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus bibendum eros non maximus. Sed consequat finibus nisi, at ornare nunc lacinia eget. Etiam aliquam facilisis turpis, eu suscipit lectus imperdiet vel.
 
-## Introduction
+## References
 
-### About the Author
+- Ref 1: Author. Date. Work Title. {Example Url 1}(https://example.com/1)
+ - QUOTE:
+"
+This is some text being quoted. 
+"
+- Ref 2: Author. Date. Work Title. {Example Url 2}(https://example.com/2)
+ - QUOTE:
+"
+This is some text being quoted. This is some text being quoted.
+"
 
-First Last is a.
+## Meta
 
-### About the Book
-
-This book is a.
----
-
-## Chapter 1: Chapter Title
-
-### Section 1
-
-This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.
-
-### Section 2
-
-This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.
-
-(image_1.jpg) 
-
-This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.
-
-This is some text. This is some text. This is some text. This is some text. 
-
-(image_2.jpg)
-
-### Chapter Summary
-
-This is a summary.
----
-
-## Appendix
-
-### Glossary of Terms, Abbreviations, and Acronyms
-
-#### A Term
-
-A definition of a term.
----
-
-## Research
-
-### Reference List
-
-Ref 1:
- - Title: A Title
- - Author: First Last
- - Date Published: October 1, 2024
- - Type: Webpage
-
-Ref 2:
- - Title: A Title
- - Author: First Last
- - Date Published: October 1, 2024
- - Type: Webpage
-
-### Works Consulted
-
-WsC 1:
- - Title: A Title
- - Author: First Last
- - Date Published: October 1, 2024
- - Type: Webpage
-
-WsC 2:
- - Title: A Title
- - Author: First Last
- - Date Published: October 1, 2024
- - Type: Webpage
-
-### Communications
-
-Com 1:
- - Subject: The subject discussed
- - Contact: First Last
- - Contact Information: example@domain
- - Start Date: October 1, 2024
- - End Date: October 1, 2024
- - Type: Email
-
-Com 2:
- - Subject: The subject discussed.
- - Contact: First Last
- - Contact Information: Excluded for privacy reasons.
- - Start Date: October 1, 2024
- - End Date: October 1, 2024
- - Type: Phone
-
-Com 3:
- - Subject: The subject discussed.
- - Contact: First Last
- - Contact Information: Unapplicable to method.
- - Start Date: October 1, 2024
- - End Date: October 1, 2024
- - Type: Video chat
----
+AUTHOR: First Last
+DATE CREATED: Month #, Year
 
 ## Legal
 
-### Copyright Notice
-
-Copyright 2024 &copy; $name, and others.
+Copyright 2025 &copy; $name, and others.
 
 ### Licensing
 
-This document is comprised of elements under multiple licenses.
+This document is comprised of elements under multiple licenses, as defined in the following subsections.
 
 #### Default
 
-Except where otherwise stated, elements of this document are licensed under the Ritchey Permissive License v18 license.
+Except where otherwise stated, elements of this document are licensed under the {Ritchey Permissive License v19}(https://github.com/jamesdanielmarrsritchey/ritchey_permissive_license/blob/c2b2d27b56c6debd598c34655d652a7a79e396ba/Ritchey%20Permissive%20License%20v19.txt) license.
 
+LICENSE TEXT:
 "
-Ritchey Permissive License v18
+Ritchey Permissive License v19
 
 Definitions
 
@@ -183,7 +87,7 @@ If sharing the Creative Work is permitted by this license, when sharing, the Lic
 
 Disclaimer
 
-Regardless of any other applicable information, the Creative Work is provided as is, without any warranties, guarantees, promises, or representations. The Licensor will not be liable for loss of any kind, damage of any kind, illness, injury, death, or infringement caused by the Licensee's use of the Creative Work. Any use of the Creative Work is done at the Licensee's own risk.
+Regardless of any other applicable information, to the maximum extent permitted by applicable laws, the Creative Work is provided as is, without any warranties, guarantees, promises, or representations. The Licensor will not be liable for loss of any kind, damage of any kind, illness, injury, death, or infringement caused by the Licensee's use of the Creative Work. Any use of the Creative Work is done at the Licensee's own risk.
 
 In the event of legal action, in relation to the Creative Work, neither the Licensor, or Licensee may be compensated by, or required to make compensation to, the other.
 
@@ -211,10 +115,15 @@ The License Author isn't a party to the licensing agreement between the Licensor
 The license text is provided under the terms of this license.
 "
 
+#### Quotes
+
+Except where otherwise stated, quotes (if substantial enough to be protected by Copyright) are incorporated into this document as Fair Dealing (per the {Copyright Act}(https://laws-lois.justice.gc.ca/eng/acts/c-42/page-6.html) of Canada), and are not distributed under any license.
+
 #### Fonts
 
-Fonts used in this document are licensed under the SIL Open Font License, Version 1.1.
+Fonts used in this document are licensed under the {SIL Open Font License, Version 1.1}(https://openfontlicense.org/documents/OFL.txt).
 
-"
-License text excluded from this document, but available at: https://openfontlicense.org/documents/OFL.txt
-"
+LIST:
+- Noto Serif:
+ - Developers: Noto Project Authors
+ - Source: {https://fonts.google.com/noto/specimen/Noto+Serif/about}(https://fonts.google.com/noto/specimen/Noto+Serif/about)
