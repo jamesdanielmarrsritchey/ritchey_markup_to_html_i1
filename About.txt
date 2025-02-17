@@ -2,9 +2,9 @@
 
 NAME: Ritchey Markup To HTML
 IMPLEMENTATION: 1
-VERSION: 23
-LONG IDENTIFIER: Ritchey Markup To HTML i1 v23
-SHORT IDENTIFIER: RMTHi1v23
+VERSION: 24
+LONG IDENTIFIER: Ritchey Markup To HTML i1 v24
+SHORT IDENTIFIER: RMTHi1v24
 AUTHOR: James Daniel Marrs Ritchey
 
 ## Overview
@@ -42,6 +42,7 @@ Releases:
 - Version 21 completed October 2, 2024.
 - Version 22 completed January 25, 2025.
 - Version 23 completed February 17, 2025.
+- Version 24 completed February 17, 2025.
 
 Highlighted Changes:
 - Version 23 expanded on the idea of {} selectors, and () comments by adding support for bold, italics, and underlined text declarations.

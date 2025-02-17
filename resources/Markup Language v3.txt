@@ -23,6 +23,13 @@ This is a message.
 It works the same as a blockquote, but is meant for things that aren't quotes.
 =
 
+Below is a block that can be styled.
+~
+This is some text.
+
+However {it contains italicized text}(Italics), unlike blockmessages, or blockquotes.
+~
+
 ### Heading 3
 
 LABEL 1: First Last

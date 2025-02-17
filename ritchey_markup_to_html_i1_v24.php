@@ -1,7 +1,7 @@
 <?php
 # Meta
 /*
-Name: Ritchey Markup To HTML i1 v23
+Name: Ritchey Markup To HTML i1 v24
 Description: Convert text (marked using a custom markup language) to HTML. Returns "TRUE" on success. Returns "FALSE" on failure.
 Notes:
 - Optional arguments can be "NULL" to skip them in which case they will use default values.
@@ -10,8 +10,8 @@ Arguments: 'source_file' (required) is the file to read from. 'destination_file'
 Arguments (Script Friendly): source_file:file:required,destination_file:file:required,css_file:file:optional,preserve_empty_lines:bool:optional,overwrite:bool:optional,display_errors:bool:optional
 */
 # Content
-if (function_exists('ritchey_markup_to_html_i1_v23') === FALSE){
-function ritchey_markup_to_html_i1_v23($source_file, $destination_file, $css_file = NULL, $preserve_empty_lines = NULL, $overwrite = NULL, $display_errors = NULL){
+if (function_exists('ritchey_markup_to_html_i1_v24') === FALSE){
+function ritchey_markup_to_html_i1_v24($source_file, $destination_file, $css_file = NULL, $preserve_empty_lines = NULL, $overwrite = NULL, $display_errors = NULL){
 	$errors = array();
 	$location = realpath(dirname(__FILE__));
 	if (@is_file($source_file) === FALSE){
@@ -277,6 +277,31 @@ function ritchey_markup_to_html_i1_v23($source_file, $destination_file, $css_fil
 				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_blockmessage 02fc208ce1cb8a08bb5b18ed8a2b6141879d0900bd3f269bb417228f79e0c0be_no_processing' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
 				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_blockmessage' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
 				$value = implode($formatted_value);
+			// Add blockarea hold
+			} else if (trim($value) === '~'){
+				if ($switch1 === 'blockarea'){
+					$switch1 = FALSE;
+					$flag_number = '2';
+				} else if ($switch1 === FALSE){
+					$switch1 = 'blockarea';
+					$flag_number = '1';
+				} else {
+					// Do nothing
+				}
+				$formatted_value = $html_div_format;
+				$formatted_value['content'] = '';
+				$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_blockarea_flag{$flag_number}' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_blockarea_flag{$flag_number}' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_blockarea_flag{$flag_number}' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
+				$value = implode($formatted_value);
+			// Add blockarea (UNLIKE OTHER BLOCKS THIS ALLOWS PROCESSING INSIDE IT)
+			} else if ($switch1 === 'blockarea'){
+				$formatted_value = $html_div_format;
+				$formatted_value['content'] = "<div class='blockarea_wrapper'>" . $value . "</div>";
+				$formatted_value['outter_ids'] = " id='outter_{$line}' class='outter_blockarea' data-md5='outter_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['extra_ids'] = " id='extra_{$line}' class='extra_blockarea' data-md5='extra_{$md5}' data-marker-md5='{$marker_md5}'";
+				$formatted_value['inner_ids'] = " id='inner_{$line}' class='inner_blockarea' data-md5='inner_{$md5}' data-marker-md5='{$marker_md5}'";
+				$value = implode($formatted_value);
 			// Add separator
 			} else if ($value === '---'){
 				$formatted_value = $html_div_format;
@@ -397,12 +422,12 @@ HEREDOC;
 	if ($display_errors === TRUE){
 		if (@empty($errors) === FALSE){
 			$message = @implode(", ", $errors);
-			if (function_exists('ritchey_markup_to_html_i1_v23_format_error') === FALSE){
-				function ritchey_markup_to_html_i1_v23_format_error($errno, $errstr){
+			if (function_exists('ritchey_markup_to_html_i1_v24_format_error') === FALSE){
+				function ritchey_markup_to_html_i1_v24_format_error($errno, $errstr){
 					echo $errstr;
 				}
 			}
-			set_error_handler("ritchey_markup_to_html_i1_v23_format_error");
+			set_error_handler("ritchey_markup_to_html_i1_v24_format_error");
 			trigger_error($message, E_USER_ERROR);
 		}
 	}
