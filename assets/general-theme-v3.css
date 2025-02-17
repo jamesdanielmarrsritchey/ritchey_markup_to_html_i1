@@ -3,20 +3,20 @@
 /* Any imported fonts need to be declared at the top of the CSS document */
 
 /* Serif */
-/* 
+ 
 body {
 	font-family: serif;
 	font-size: 16px;
 	margin: 0px;
 }
-*/
 
 /* Noto Serif. Source: https://fonts.google.com/noto/specimen/Noto+Serif/about */
-
+/*
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
 body {
-	font-family: 'Noto Serif', serif;
+	font-family: 'Noto Serif', serif; 
 }
+*/
 
 /* Sans-serif */
 /* 
@@ -41,19 +41,35 @@ body {
 }
 */
 
-/* This sets a default margin for the top and bottom of each page for printing, but the tool used to print may choose whether to honor it. In Firefox use "Default" margins to honor it. */
-@page {
-	margin-top: 25px;
-	margin-bottom: 25px;
-	margin-left: 0px;
-	margin-right: 0px;
+.text_style_bold {
+	font-weight: bold;
+}
+.text_style_italics {
+	font-style: italic;
+}
+.text_style_underlined {
+	text-decoration: underline;
 }
 
 .page_heading {
-	display: none;
+	position: fixed;
+	top: 0;
+	min-height: 16px;
+	right: 0;
+	z-index: 2;
+	color: #fff;
+	font-size: 2px;
+	text-align: left;
 }
 .page_footer {
-	display: none;
+	position: fixed;
+	bottom: 0;
+	min-height: 1px;
+	right: 0;
+	z-index: 2;
+	color: #fff;
+	font-size: 2px;
+	text-align: left;
 }
 
 a:link {
@@ -73,29 +89,11 @@ a:active {
   text-decoration: underline;
 }
 
-.outter_h1 {
-	background-color: #FFFFFF;
-	margin: 0px;
-	margin-bottom: 10px;
-	margin-top: 10px;
-	padding: 0px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-.inner_h1 {
-	font-size: 34px;
-	font-weight: bolder;
-	text-decoration: none;
-	max-width: 90%;
-	min-width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	border-bottom-color: #666666;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
+.tab {
+	min-width: 0.5in;
+	display: inline-block;
 }
 
-/*
 .outter_h1 {
 	background-color: #FFFFFF;
 	margin: 0px;
@@ -114,37 +112,7 @@ a:active {
 	margin-left: auto;
 	margin-right: auto;
 }
-*/
 
-.outter_h2 {
-	background-color: #FFFFFF;
-	margin: 0px;
-	margin-bottom: 10px;
-	margin-top: 10px;
-	padding: 0px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-.extra_h2 {
-	max-width: 90%;
-	min-width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-}
-.inner_h2 {
-	font-size: 30px;
-	font-weight: bolder;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 10px;
-	padding-right: 10px;
-	background-color: #8A8888;
-	background-image: linear-gradient(to right, #8A8888 , #DAFAFF);
-	border-radius: 10px 10px 0px 0px;
-	color: #FFFFFF;
-}
-
-/*
 .outter_h2 {
 	background-color: #FFFFFF;
 	margin: 0px;
@@ -162,7 +130,6 @@ a:active {
 	margin-left: auto;
 	margin-right: auto;
 }
-*/
 
 .outter_h3 {
 	background-color: #FFFFFF;
@@ -174,9 +141,8 @@ a:active {
 	padding-bottom: 5px;
 }
 .inner_h3 {
-	font-size: 22px;
-	color: #111111;
-	font-weight: lighter;
+	font-size: 26px;
+	font-weight: normal;
 	text-decoration: underline;
 	max-width: 90%;
 	min-width: 90%;
@@ -194,9 +160,47 @@ a:active {
 	padding-bottom: 5px;
 }
 .inner_h4 {
-	font-size: 18px;
-	color: #8A8888;
+	font-size: 22px;
 	font-weight: lighter;
+	text-decoration: underline;
+	max-width: 90%;
+	min-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.outter_h5 {
+	background-color: #FFFFFF;
+	margin: 0px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.inner_h5 {
+	font-size: 18px;
+	font-weight: bolder;
+	text-decoration: none;
+	max-width: 90%;
+	min-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.outter_h6 {
+	background-color: #FFFFFF;
+	margin: 0px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.inner_h6 {
+	font-size: 16px;
+	font-weight: lighter;
+	text-decoration: none;
 	max-width: 90%;
 	min-width: 90%;
 	margin-left: auto;
@@ -219,39 +223,64 @@ a:active {
 	margin-right: auto;
 }
 
-.outter_blockquote {
+.outter_ah {
 	background-color: #FFFFFF;
 	margin: 0px;
 	padding: 0px;
 }
-.extra_blockquote {
+.inner_ah {
+	font-size: 16px;
+	font-weight: normal;
+	text-decoration: none;
+	max-width: 90%;
+	min-width: 90%;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 90%;
-	background-color: #EEEEEE;
-	min-width: 90%;
+}
+
+.outter_blockquote {
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
 }
 .inner_blockquote {
 	background-color: #EEEEEE;
 	font-size: 16px;
 	font-weight: normal;
 	text-decoration: none;
-	margin-left: 10px;
+	max-width: 90%;
+	min-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
 	min-height: 16px; /* This is needed to preserve empty lines. It should match the font-size. */
-	border-left-color: #CCCCCC;
-	border-left-width: 3px;
-	border-left-style: solid;
 }
 .blockquote_wrapper {
 	padding-left: 10px;
 	padding-right: 10px;
 }
-.outter_blockquote_flag1, .outter_blockquote_flag2 {
+.outter_blockquote_flag1 {
 	background-color: #FFFFFF;
 	margin: 0px;
 	padding: 0px;
+	margin-top: 25px;
 }
-.inner_blockquote_flag1, .outter_blockquote_flag2 {
+.inner_blockquote_flag1 {
+	background-color: #EEEEEE;
+	height: 10px;
+	min-height: 10px;
+	max-height: 10px;
+	max-width: 90%;
+	min-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.outter_blockquote_flag2 {
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 25px;
+}
+.inner_blockquote_flag2 {
 	background-color: #EEEEEE;
 	height: 10px;
 	min-height: 10px;
@@ -282,12 +311,12 @@ a:active {
 	padding-left: 10px;
 	padding-right: 10px;
 }
-.outter_blockmessage_flag {
+.outter_blockmessage_flag1 {
 	background-color: #FFFFFF;
 	margin: 0px;
 	padding: 0px;
 }
-.inner_blockmessage_flag {
+.inner_blockmessage_flag1 {
 	background-color: #F4E93F;
 	height: 10px;
 	min-height: 10px;
@@ -296,6 +325,23 @@ a:active {
 	min-width: 90%;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 25px;
+}
+.outter_blockmessage_flag2 {
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
+.inner_blockmessage_flag2 {
+	background-color: #F4E93F;
+	height: 10px;
+	min-height: 10px;
+	max-height: 10px;
+	max-width: 90%;
+	min-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 25px;
 }
 
 .field {
@@ -321,6 +367,15 @@ a:active {
 	margin-right: auto;
 }
 
+.comment_preferred {
+	color: blueviolet;
+	text-transform: capitalize;
+}
+.comment_expired {
+	color: red;
+	text-transform: capitalize;
+}
+
 .fl_entry {
 	display: inline-block;
 	padding: 5px;
@@ -343,9 +398,34 @@ a:active {
 	margin-left: auto;
 	margin-right: auto;
 }
-
+.tag_label::after {
+	content: "Tags:";
+}
+.tag_label {
+	margin-right: 5px;
+	display: inline-block;
+}
+.tag {
+	display: inline-block;
+	padding: 5px;
+	background-color: #DDDDDD;
+	margin-right: 10px;
+}
 .outter_t {
-	display: none;
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.inner_t {
+	font-size: 16px;
+	font-weight: normal;
+	text-decoration: none;
+	max-width: 90%;
+	min-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .outter_ll1 {
@@ -394,9 +474,11 @@ a:active {
 	text-transform: capitalize;
 }
 
-
-
-
+.outter_ll3 {
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
 .inner_ll3 {
 	font-size: 16px;
 	font-weight: normal;
@@ -417,7 +499,30 @@ a:active {
 	text-transform: capitalize;
 }
 
-
+.outter_ll4 {
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
+.inner_ll4 {
+	font-size: 16px;
+	font-weight: normal;
+	max-width: 90%;
+	min-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.inner_ll4::after {
+	content: ":";
+}
+.inner_ll4 .list_dot {
+	padding-left: 30px;
+	padding-right: 10px;
+}
+.inner_ll4 .list_value {
+	text-decoration: underline;
+	text-transform: capitalize;
+}
 
 .outter_le2 {
 	background-color: #FFFFFF;
@@ -438,9 +543,7 @@ a:active {
 	padding-right: 10px;
 }
 
-
-
-.outter_le3 {
+.outter_le3: {
 	background-color: #FFFFFF;
 	margin: 0px;
 	padding: 0px;
@@ -455,15 +558,94 @@ a:active {
 	margin-right: auto;
 }
 .inner_le3 .list_dot {
+	padding-left: 20px;
+	padding-right: 10px;
+}
+
+.outter_le4 {
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
+.inner_le4 {
+	font-size: 16px;
+	font-weight: normal;
+	text-decoration: none;
+	max-width: 90%;
+	min-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.inner_le4 .list_dot {
 	padding-left: 30px;
 	padding-right: 10px;
 }
 
+.outter_le5 {
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
+.inner_le5 {
+	font-size: 16px;
+	font-weight: normal;
+	text-decoration: none;
+	max-width: 90%;
+	min-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.inner_le5 .list_dot {
+	padding-left: 40px;
+	padding-right: 10px;
+}
 
+.outter_le6 {
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
+.inner_le6 {
+	font-size: 16px;
+	font-weight: normal;
+	text-decoration: none;
+	max-width: 90%;
+	min-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.inner_le6 .list_dot {
+	padding-left: 50px;
+	padding-right: 10px;
+}
 
 .outter_separator {
 	display: none;
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
 }
+.inner_separator {
+	border-bottom-style: dotted;
+	border-bottom-width: 3px;
+	border-bottom-color: #333333;
+	min-height: 15px;
+	margin-bottom: 15px;
+	max-width: 90%;
+	min-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+@media print {
+   .outter_separator {
+  		display: inline;
+  		page-break-after: always;
+  	}
+  	.inner_separator {
+		display:none;  	
+  	}
+}
+
 
 .image {
 	display: inline-block;
@@ -472,6 +654,10 @@ a:active {
 	max-height: 100vh;
 	padding-bottom: 25px;
 	padding-top: 25px;
+}
+
+.inner_h3[data-marker-md5="d31e5910e8534d0db7a5643a41b15817"] {
+    color: red;
 }
 
 [data-md5="outter_697a79fc42a84ecf965037be2441dbba"]{

@@ -2,14 +2,14 @@
 
 NAME: Ritchey Markup To HTML
 IMPLEMENTATION: 1
-VERSION: 22
-LONG IDENTIFIER: Ritchey Markup To HTML i1 v22
-SHORT IDENTIFIER: RMTHi1v22
+VERSION: 23
+LONG IDENTIFIER: Ritchey Markup To HTML i1 v23
+SHORT IDENTIFIER: RMTHi1v23
 AUTHOR: James Daniel Marrs Ritchey
 
 ## Overview
 
-Ritchey Markup To HTML is a user-defined PHP function, which takes a plain-text file, that is marked with a markup language (the language supported is specific to this tool), and converts it to an HTML file. The markup language used is basic, and meant to be readable as a plain-text document, but provide enough information that it can help create beautified documents when converted. The document is meant for use as a document, not a website.
+Ritchey Markup To HTML is a user-defined PHP function, which takes a plain-text file, that is marked with a markup language (the language supported is specific to this tool), and converts it to an HTML file. The idea is that the plain-text is readable as is, but provide enough information for beautified documents to be made from it when converted. The HTML document is meant for use as a document, not a website.
 
 ## Licensing
 
@@ -41,8 +41,10 @@ Releases:
 - Version 20 completed September 26, 2024.
 - Version 21 completed October 2, 2024.
 - Version 22 completed January 25, 2025.
+- Version 23 completed February 17, 2025.
 
 Highlighted Changes:
+- Version 23 expanded on the idea of {} selectors, and () comments by adding support for bold, italics, and underlined text declarations.
 - This project was named Ritchey Marked Text To HTML between versions 19-21.
 - This project was named Ritchey Formatted Text To HTML between versions 1-18.
 - This project was built originally for creating resumes, but has since been genericized to creating documents in general.
@@ -56,3 +58,4 @@ Technical:
 
 Other:
 - The HTML document produced by this tool is designed for viewing as an offline document, not for being served online as a webpage.
+- Processing largely tries to treat lines as independent items, though for some things isn't entirely possible.
