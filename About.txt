@@ -2,14 +2,14 @@
 
 NAME: Ritchey Markup To HTML
 IMPLEMENTATION: 1
-VERSION: 24
-LONG IDENTIFIER: Ritchey Markup To HTML i1 v24
-SHORT IDENTIFIER: RMTHi1v24
+VERSION: 25
+LONG IDENTIFIER: Ritchey Markup To HTML i1 v25
+SHORT IDENTIFIER: RMTHi1v25
 AUTHOR: James Daniel Marrs Ritchey
 
 ## Overview
 
-Ritchey Markup To HTML is a user-defined PHP function, which takes a plain-text file, that is marked with a markup language (the language supported is specific to this tool), and converts it to an HTML file. The idea is that the plain-text is readable as is, but provide enough information for beautified documents to be made from it when converted. The HTML document is meant for use as a document, not a website.
+Ritchey Markup To HTML is a user-defined PHP function, which takes a plain-text file, that is marked with a markup language (the language supported is specific to this tool), and converts it to an HTML file. The idea is that the plain-text is readable as is, but provides enough information for beautified documents to be made from it when converted. The HTML document is meant for use as a document, not a website.
 
 ## Licensing
 
@@ -43,6 +43,7 @@ Releases:
 - Version 22 completed January 25, 2025.
 - Version 23 completed February 17, 2025.
 - Version 24 completed February 17, 2025.
+- Version 25 completed April 19, 2025.
 
 Highlighted Changes:
 - Version 23 expanded on the idea of {} selectors, and () comments by adding support for bold, italics, and underlined text declarations.
@@ -55,7 +56,8 @@ Highlighted Changes:
 Technical:
 - Injecting HTML into the plain-text document, to achieve additional formatting in the produced HTML document, isn't supported. It goes against the objective of the markup language used by this tool. However, in some cases it does work. For example, use of <i>italics</i> and <b>bold</b> worked in  version 16.
 - The classes "page_heading", and "page_footer" are used to pad page-breaks, for the purpose of working around the text-combining issue common in PDF documents. If you don't need this, use "display: none" in your CSS sheet.
-- Some of the pre-provided themes contain aspects which alter the appearance when printed. These aspects are not compatible with all browsers.
+- Some of the pre-provided themes contain aspects which alter the appearance when printed. These aspects are not compatible with all browsers, and these themes were likely created with printing to PDF in mind, rather than HTML use cases.
+- Older versions of themes may still be included in the assets folder, but may not longer be compatible. If they are known to be incompatible they are removed.
 
 Other:
 - The HTML document produced by this tool is designed for viewing as an offline document, not for being served online as a webpage.
